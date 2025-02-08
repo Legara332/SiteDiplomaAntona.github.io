@@ -1,6 +1,6 @@
 @font-face {
     font-family: Aleksandr-Andreev;
-    src: url("/fonts/Pochaevsk-Regular.ttf");
+    src: url("../fonts/Pochaevsk-Regular.ttf");
 }
 body {
     background-image: url(../res/background.avif);
