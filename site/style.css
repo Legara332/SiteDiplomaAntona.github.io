@@ -1,6 +1,6 @@
 @font-face {
     font-family: Aleksandr-Andreev;
-    src: url("/fonts/Pochaevsk-Regular.ttf");
+    src: url("../fonts/Pochaevsk-Regular.ttf");
 }
 body {
     background-image: url(../res/background.avif);
@@ -68,7 +68,7 @@ header {
     color: #000;
     width: 24px;
     height: 24px;
-    background: url(/res/poisk.png);
+    background: url(../res/poisk.png);
     background-size: contain;
 }
 
