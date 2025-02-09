@@ -231,13 +231,11 @@ function closeLoginModal() {
 }
 
 function login() {
-    // Здесь можно добавить логику для обработки входа
     alert("Вход выполнен!");
     closeLoginModal();
 }
 
 function openRegisterModal() {
-    // Здесь можно добавить логику для открытия окна регистрации
     alert("Открытие окна регистрации!");
     closeLoginModal();
 }
