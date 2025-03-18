@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <meta charset="UTF-8">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="./site/style.css">
+    <script defer src="./site/anim.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <a href="index.html" class="logo">ВарБуллет</a>
+            <nav>
+                <a href="contacts.html">Контакты</a>
+                <a href="about.html">О нас</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Личный кабинет</h1>
+        
+        <div class="profile-section">
+            <div class="avatar-container">
+                <h2 id="user-email"></h2>
+            </div>
+
+            <script type="module">
+                import { supabase } from './site/supabaseClient.js';
+              
+                // Показываем email пользователя
+                supabase.auth.getUser().then(({ data: { user } }) => {
+                  if (user) {
+                    document.getElementById('user-email').textContent = user.email;
+                  }
+                });
+              </script>
+
+            <div class="password-change">
+                <h2>Смена пароля
+                </h2>
+                <input type="password" id="old-password" placeholder="Старый пароль">
+                <input type="password" id="new-password" placeholder="Новый пароль">
+                <input type="password" id="confirm-password" placeholder="Подтвердите пароль">
+                <button onclick="changePassword()">Изменить пароль</button>
+            </div>
+            <button class="logout-btn" onclick="logout()">Выйти</button>
+        </div>
+    </div>
+</body>
+</html>
+
+<script type="module">
+  import { supabase } from './site/supabaseClient.js';
+  
+  // Только проверка авторизации без редиректов
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) window.location.href = 'index.html';
+</script>
